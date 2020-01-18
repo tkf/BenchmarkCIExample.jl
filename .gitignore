@@ -1,3 +1,4 @@
 .DS_Store
+/benchmark/*.json
 /dev/
 Manifest.toml
