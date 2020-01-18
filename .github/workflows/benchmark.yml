@@ -6,6 +6,8 @@ on:
 jobs:
   Benchmark:
     runs-on: ubuntu-latest
+    env:
+      JULIA_DEBUG: BenchmarkCI
     steps:
       - uses: actions/checkout@v2
       - uses: julia-actions/setup-julia@latest
@@ -19,4 +21,3 @@ jobs:
         run: julia -e "using BenchmarkCI; BenchmarkCI.postjudge()"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # JULIA_DEBUG: BenchmarkCI
