@@ -17,9 +17,6 @@ jobs:
         run: julia -e 'using Pkg; pkg"add PkgBenchmark https://github.com/tkf/BenchmarkCI.jl#tmpproject"'
       - name: Run benchmarks
         run: julia -e "using BenchmarkCI; BenchmarkCI.judge()"
-        env:
-          # Add project root directory `.` to the load path:
-          JULIA_LOAD_PATH: '@:.:'
       - name: Post results
         run: julia -e "using BenchmarkCI; BenchmarkCI.postjudge()"
         env:
